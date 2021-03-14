@@ -1,0 +1,190 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "test_lib",
+    hdrs = ["test.hpp"],
+)
+
+cc_library(
+    name = "data_member",
+    srcs = ["data_member.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "function_binding",
+    srcs = ["function_binding.cpp"],
+    deps = ["//:typeof"],
+)
+
+cc_library(
+    name = "function_ptr_from_tpl",
+    srcs = ["function_ptr_from_tpl.cpp"],
+    deps = ["//:typeof"],
+)
+
+cc_library(
+    name = "function_ptr",
+    srcs = ["function_ptr.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "function_ref",
+    srcs = ["function_ref.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "function",
+    srcs = ["function.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "member_function",
+    srcs = ["member_function.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "modifiers",
+    srcs = ["modifiers.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+# cc_library(
+#     name = "msvc_typeof_in_lambda",
+#     srcs = ["msvc_typeof_in_lambda.cpp"],
+#     deps = ["//:typeof"],
+# )
+
+cc_library(
+    name = "nested_typedef",
+    srcs = ["nested_typedef.cpp"],
+    deps = ["//:typeof"],
+)
+
+cc_library(
+    name = "noncopyable",
+    srcs = ["noncopyable.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+        "@boost//core",
+    ],
+)
+
+cc_test(
+    name = "odr_no_uns1",
+    srcs = ["odr_no_uns1.cpp", "odr_no_uns1.hpp", "odr_no_uns2.hpp"],
+    deps = ["//:typeof"],
+)
+
+cc_library(
+    name = "odr_no_uns2",
+    srcs = ["odr_no_uns2.cpp", "odr_no_uns2.hpp", "odr_no_uns1.hpp"],
+    deps = ["//:typeof"],
+)
+
+cc_test(
+    name = "odr1",
+    srcs = ["odr1.cpp", "odr.hpp"],
+    deps = ["//:typeof"],
+)
+
+cc_library(
+    name = "odr2",
+    srcs = ["odr2.cpp", "odr.hpp"],
+    deps = ["//:typeof"],
+)
+
+cc_library(
+    name = "std",
+    srcs = ["std.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "template_dependent",
+    srcs = ["template_dependent.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "template_enum",
+    srcs = ["template_enum.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "template_int",
+    srcs = ["template_int.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "template_multiword",
+    srcs = ["template_multiword.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "template_tpl",
+    srcs = ["template_tpl.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "template_type",
+    srcs = ["template_type.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
+
+cc_library(
+    name = "type",
+    srcs = ["type.cpp"],
+    deps = [
+        ":test_lib",
+        "//:typeof",
+    ],
+)
