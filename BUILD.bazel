@@ -6,8 +6,8 @@ cc_library(
     hdrs = glob(["include/**/*.hpp"]),
     includes = ["include"],
     deps = [
-        "@boost//preprocessor",
-        "@boost//type_traits",
-        "@boost//config",
+        "@boost//libs/preprocessor",
+        "@boost//libs/type_traits",
+        "@boost//libs/config",
     ],
 )

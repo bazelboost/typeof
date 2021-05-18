@@ -89,7 +89,7 @@ cc_library(
     deps = [
         ":test_lib",
         "//:typeof",
-        "@boost//core",
+        "@boost//libs/core",
     ],
 )
 
